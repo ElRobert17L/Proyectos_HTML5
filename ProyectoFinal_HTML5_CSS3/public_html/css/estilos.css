@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    font: 16px Helvetica, Arial;
+}
+
+.contenedor {
+    width: 90%;
+    margin: 0 5%;
+}
+
+.cabecero-contenedor,
+.pie_pagina-contenedor,
+.principal aside {
+    background: #f16529;
+}
+
+/* ============
+    Titulo
+   ============ */
+
+.titulo {
+    color: white;
+}
+
+/* ============
+    Menu
+   ============ */
+
+nav li:first-child a {
+    margin-left: 0;
+}
+
+nav li:last-child a {
+    margin-right: 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+}
+
+nav a:hover,
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a {
+    display: block;
+    float: left;
+    width: 27%;
+    margin: 0 1.5%;
+    padding: 25px 2%;
+    margin-bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background: #e44d26;
+}
+
+/* ====================
+    Contenido Principal
+   ==================== */
+
+.principal {
+    padding: 30px 0;
+}
+
+.principal article h1 {
+    font-size: 2em;
+}
+
+.pie_pagina-contenedor footer {
+    color: white;
+    padding: 20px 0;
+}
+
+.principal aside {
+    color: white;
+}
+
+/* ===============
+   Clases de Ayuda
+   ===============*/
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ===============
+  Formularios
+   ===============*/
+.tituloFormularios {
+    color: rgb(0, 119, 184);
+    width: 400px;
+    font-size: 16px;
+    margin: 0 0 0 40px;
+}
+.fieldsetFormularios {
+    color: rgb(0, 119, 184);
+    width: 400px;
+    font-size: 16px;
+    margin: 0 0 40px 40px;
+}
+
+label{
+  display:block;
+}
+
+input:invalid {
+  border: 1px solid #CC0000;
+}
+
+input:valid{
+  background-color: lightyellow;
+  border: 1px solid #3399FF;  
+}
+
+input:valid+.invalid{
+  visibility: hidden;
+}
+
+input:invalid+.invalid{
+  visibility: visible;
+}
+
+input#enviar {
+  margin-top: 10px; 
+  padding: 4px 20px;
+  background:rgb(0, 163, 255);
+  border:2px outset #dad9d8;
+  font-size:1.1em;
+  color:#fff;
+  text-shadow: 0px 1px 10px #000;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+}
+
+input#enviar:hover, input#enviar:focus {
+  border:2px solid #dad9d8;
+}
+/* ===============
+  Video
+   ===============*/
+.video {
+    width: 600px;
+    height: 409px;
+    margin: 0 0 0 40px;
+}
+/* ===============
+  Drag & drop
+   ===============*/
+#zona_arrastrar {
+  font-size: 13px;
+  width: 150px;
+  height: 300px;
+  color: Gray;
+  border: 5px dashed Gray;
+}
+.seleccionP {
+  font-size: 13px;
+}
+
+#elementos {
+  font-size: 13px; 
+  margin: 0 0 40px 0;
+}

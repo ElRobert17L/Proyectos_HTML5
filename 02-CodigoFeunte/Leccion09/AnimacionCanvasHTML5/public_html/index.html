@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animación con Canvas</title>
+    <meta charset="UTF-8">
+    <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+    <script src="js/libs/modernizr-2.6.2/modernizr.min.js"></script>
+    <script>
+
+      var x = 0;
+      var direccion, imagen;
+      var canvas, ctx;
+
+      $(document).ready(function() {
+        if (Modernizr.canvas) {
+           animar();
+        }
+        else {
+          alert("Tu navegador NO soporta Canvas");
+          return;
+        }
+       
+      });
+
+      function animar() {
+        imagen = new Image();
+
+        canvas = document.getElementById('canvas1');
+        ctx = canvas.getContext('2d');
+
+        imagen.onload = function() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(imagen, x, 0);
+          actualizarDibujo();
+          setInterval(animar(), 10);
+        };
+        imagen.src = 'images/duke.png';
+      }
+
+      function actualizarDibujo() {
+        x++;
+        //volvemos al inicio
+        if (x > ctx.canvas.width) {
+          x = 0;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Animación con Canvas</h1>
+    <canvas id="canvas1" width="600" height="410" style="border: dotted gray 1px">
+      Tu navegador no soporta CANVAS
+    </canvas>
+  </body>
+</html>

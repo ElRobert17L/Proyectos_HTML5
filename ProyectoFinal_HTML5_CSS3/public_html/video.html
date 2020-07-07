@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio Final</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/estilos.css"/>
+        <link href="css/escritorio.css" rel="stylesheet" type="text/css" media="only screen and (min-width:769px)" >
+        <link href="css/tablets.css" rel="stylesheet" type="text/css"    media="only screen and (max-width: 768px) and (min-width:481px)" >
+        <link href="css/moviles.css" rel="stylesheet" type="text/css"    media="only screen and (max-width: 480px) and (min-width:0px)" >
+        <meta name="viewport" content="width=device-width">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+        <script src="http://afarkas.github.io/webshim/demos/js-webshim/minified/extras/modernizr-custom.js"></script>
+        <script src="http://afarkas.github.io/webshim/demos/js-webshim/minified/polyfiller.js"></script> 
+        <script>$.webshims.polyfill();</script>
+        <script>
+            $(document).ready(function () {
+                $("form").submit(function () {
+                    alert("Formulario Validado...");
+                    return false;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="cabecero-contenedor">
+            <header class="contenedor clearfix">
+                <h1 class="titulo">Ejercicio Final</h1>
+                <nav>
+                    <ul>
+                        <li><a href="formularios.html">Formularios</a></li>
+                        <li><a href="video.html">Video</a></li>
+                        <li><a href="drag.html">Drag & Drop</a></li>
+                    </ul>
+                </nav>
+                <!--<div style="clear:both"></div>-->
+            </header>
+        </div>
+        <header class="video">
+            <h1>Manejo de video en HTML5</h1>
+
+            <video class="videoHTML" controls poster="recursos/portada.jpg" preload autoplay loop> 
+                <source src="recursos/Clubjavamaster.mp4" type="video/mp4" />
+                <source src="recursos/ClubJavaMaster.webm" type="video/webm" />
+                <source src="recursos/ClubJavaMaster.ogv" type="video/ogg" />
+                <object> 
+                    <param name="movie" value="http://fpdownload.adobe.com/strobe/FlashMediaPlayback.swf"></param>
+                    <param name="flashvars" value="src=http%3A%2F%2Fglobalmentoring.com.mx%2Fhtml5%2Fleccion4%2Frecursos%2FClubjavamaster.mp4&poster=http%3A%2F%2Fglobalmentoring.com.mx%2Fhtml5%2Fleccion4%2Frecursos%2Fportada.jpg"></param>
+                    <param name="allowFullScreen" value="true"></param>
+                    <param name="allowscriptaccess" value="always"></param>
+                    <embed src="http://fpdownload.adobe.com/strobe/FlashMediaPlayback.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" flashvars="src=http%3A%2F%2Fglobalmentoring.com.mx%2Fhtml5%2Fleccion4%2Frecursos%2FClubjavamaster.mp4&poster=http%3A%2F%2Fglobalmentoring.com.mx%2Fhtml5%2Fleccion4%2Frecursos%2Fportada.jpg">        
+                    </embed>
+                </object>
+            </video>
+        </header>
+        <div class="pie_pagina-contenedor">
+            <footer class="contenedor">
+                <h3>Pie de página</h3>
+            </footer>
+        </div>
+    </body>
+</html>

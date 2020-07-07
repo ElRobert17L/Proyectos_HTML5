@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detección de Drag & Drop</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/estilos.css"/> 
+    <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+    <script src="js/libs/modernizr-2.6.2/modernizr.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        if (Modernizr.draganddrop) {
+          //$("#resultado").html("Tu navegado SI soporta Drag and Drop");
+          //Registramos el método listener dragstart
+          //document.getElementById("img1").addEventListener("dragstart",manejoDragStart, false);
+          $('#img1').bind("dragstart", manejoDragStart);
+        } else {
+          alert("Tu navegador NO soporta Drag and Drop");
+        }
+
+        function manejoDragStart(evento) {
+          $("#msg_eventos").html("Inicio del evento Arrastrar: " + evento.target.id);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Detección de Drag & Drop</h1>
+    <div id="msg_eventos"></div>
+    <img id="img1" draggable="true" src="recursos/laptop.png" alt="Laptop">
+    <div id="zona_arrastrar"> Arrastra la imagen aquí:</div>
+  </body>
+</html>

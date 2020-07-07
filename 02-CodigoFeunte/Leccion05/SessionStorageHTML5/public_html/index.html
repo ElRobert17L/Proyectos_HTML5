@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manejo de Session Storage</title>
+    <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $("#lista").blur(function() {
+          sessionStorage.setItem('listado', $("#lista").html());
+          //regrescamos la lista
+          location.reload();
+        });
+
+        if (sessionStorage.getItem('listado')) {
+          $("#mensaje").html("<h3>Datos almacenados en Session Storage:</h3>");
+          $("#lista").html(sessionStorage.getItem('listado'));
+          $("#resultado").text(sessionStorage.getItem('listado'));
+        } else {
+          $("#mensaje").text("No hay datos en Session Storage.");
+        }
+
+        //Limpiamos la lista
+        $("#limpiar").click(function() {
+          sessionStorage.removeItem('listado');
+          //limpia todas las variables de sessionstorage
+          //sessionStorage.clear(); 
+          location.reload();
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Datos a Ingresar a la lista:</h1>
+    </header>
+    <div>
+      <ul id="lista" contenteditable="true">
+        <li></li>
+      </ul>
+    </div>
+    <input type="button" id="limpiar" value="Limpiar" />
+
+    <div id="mensaje"></div>
+    <div id="resultado"></div>
+    
+    <a href="resultados.html">Mostrar resultados almacenados</a>
+  </body>
+</html>

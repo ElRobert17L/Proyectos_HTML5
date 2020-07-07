@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manejo de Local Storage</title>
+    <script src="js/libs/modernizr-2.6.2/modernizr.min.js"></script>
+    <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $("#lista").blur(function() {
+          localStorage.setItem('listado', $("#lista").html());
+          //regrescamos la lista
+          //location.reload();
+        });
+
+        if (localStorage.getItem('listado')) {
+          $("#mensaje").html("<h3>Datos almacenados en Local Storage:</h3>");
+          $("#lista").html(localStorage.getItem('listado'));
+          $("#resultado").text(localStorage.getItem('listado'));
+        } else {
+          $("#mensaje").text("No hay datos en Local Storage.");
+        }
+
+        //Limpiamos la lista
+        $("#limpiar").click(function() {
+          localStorage.removeItem('listado');
+          //limpia todas las variables de localstorage
+          //localStorage.clear(); 
+          //location.reload();
+        });
+
+        window.addEventListener("storage", escucharEvento, false);
+        
+        function escucharEvento(e){
+            alert("Evento generando localStorage" + e.storageArea.listado);
+            location.reload();
+        }
+
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Datos a Ingresar a la lista:</h1>
+    </header>
+    <div>
+      <ul id="lista" contenteditable="true">
+        <li></li>
+      </ul>
+    </div>
+    <input type="button" id="limpiar" value="Limpiar" />
+    
+    <div id="mensaje"></div>
+    <div id="resultado"></div>
+  </body>
+</html>

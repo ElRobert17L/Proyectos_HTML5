@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Manejo de Video en HTML5</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <header>
+      <h1>Manejo de video en HTML5</h1>
+
+      <video controls poster="recursos/portada.jpg" preload autoplay loop> 
+        <source src="recursos/Clubjavamaster.mp4" type="video/mp4" />
+        <source src="recursos/ClubJavaMaster.webm" type="video/webm" />
+        <source src="recursos/ClubJavaMaster.ogv" type="video/ogg" />
+        <object width="600" height="409"> 
+          <param name="movie" value="http://fpdownload.adobe.com/strobe/FlashMediaPlayback.swf"></param>
+          <param name="flashvars" value="src=http%3A%2F%2Fglobalmentoring.com.mx%2Fhtml5%2Fleccion4%2Frecursos%2FClubjavamaster.mp4&poster=http%3A%2F%2Fglobalmentoring.com.mx%2Fhtml5%2Fleccion4%2Frecursos%2Fportada.jpg"></param>
+          <param name="allowFullScreen" value="true"></param>
+          <param name="allowscriptaccess" value="always"></param>
+          <embed src="http://fpdownload.adobe.com/strobe/FlashMediaPlayback.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="600" height="409" flashvars="src=http%3A%2F%2Fglobalmentoring.com.mx%2Fhtml5%2Fleccion4%2Frecursos%2FClubjavamaster.mp4&poster=http%3A%2F%2Fglobalmentoring.com.mx%2Fhtml5%2Fleccion4%2Frecursos%2Fportada.jpg">        
+          </embed>
+        </object>
+      </video>
+    </header>
+  </body>
+</html>
+
